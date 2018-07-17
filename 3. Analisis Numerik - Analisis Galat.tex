@@ -1,0 +1,318 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Beamer Presentation
+% LaTeX Template
+% Version 1.0 (10/11/12)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND THEMES
+%----------------------------------------------------------------------------------------
+
+\documentclass{beamer}
+
+\mode<presentation> {
+
+% The Beamer class comes with a number of default slide themes
+% which change the colors and layouts of slides. Below this is a list
+% of all the themes, uncomment each in turn to see what they look like.
+
+%\usetheme{default}
+%\usetheme{AnnArbor}
+%\usetheme{Antibes}
+%\usetheme{Bergen}
+%\usetheme{Berkeley}
+%\usetheme{Berlin}
+%\usetheme{Boadilla}
+%\usetheme{CambridgeUS}
+%\usetheme{Copenhagen}
+%\usetheme{Darmstadt}
+%\usetheme{Dresden}
+%\usetheme{Frankfurt}
+%\usetheme{Goettingen}
+%\usetheme{Hannover}
+%\usetheme{Ilmenau}
+%\usetheme{JuanLesPins}
+%\usetheme{Luebeck}
+\usetheme{Madrid}
+%\usetheme{Malmoe}
+%\usetheme{Marburg}
+%\usetheme{Montpellier}
+%\usetheme{PaloAlto}
+%\usetheme{Pittsburgh}
+%\usetheme{Rochester}
+%\usetheme{Singapore}
+%\usetheme{Szeged}
+%\usetheme{Warsaw}
+
+% As well as themes, the Beamer class has a number of color themes
+% for any slide theme. Uncomment each of these in turn to see how it
+% changes the colors of your current slide theme.
+
+%\usecolortheme{albatross}
+%\usecolortheme{beaver}
+%\usecolortheme{beetle}
+%\usecolortheme{crane}
+%\usecolortheme{dolphin}
+%\usecolortheme{dove}
+%\usecolortheme{fly}
+%\usecolortheme{lily}
+%\usecolortheme{orchid}
+%\usecolortheme{rose}
+%\usecolortheme{seagull}
+%\usecolortheme{seahorse}
+%\usecolortheme{whale}
+%\usecolortheme{wolverine}
+
+%\setbeamertemplate{footline} % To remove the footer line in all slides uncomment this line
+%\setbeamertemplate{footline}[page number] % To replace the footer line in all slides with a simple slide count uncomment this line
+
+%\setbeamertemplate{navigation symbols}{} % To remove the navigation symbols from the bottom of all slides uncomment this line
+}
+
+\usepackage{graphicx} % Allows including images
+\usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\title[Anum - Galat]{Analisis Numerik\\Analisis Galat} % The short title appears at the bottom of every slide, the full title is only on the title page
+
+\author{Ahmad Rio Adriansyah} % Your name
+\institute[STT-NF] % Your institution as it will appear on the bottom of every slide, may be shorthand to save space
+{
+STT Terpadu - Nurul Fikri \\ % Your institution for the title page
+\medskip
+\textit{ahmad.rio.adriansyah@gmail.com
+\\arasy@nurulfikri.ac.id} % Your email address
+}
+\date{\today} % Date, can be changed to a custom date
+
+\usepackage{graphicx}
+\begin{document}
+
+\begin{frame}
+\titlepage % Print the title page as the first slide
+\end{frame}
+
+%----------------------------------------------------------------------------------------
+%	PRESENTATION SLIDES
+%----------------------------------------------------------------------------------------
+
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{Galat}
+Jika $\hat{a}$ adalah nilai hampiran untuk nilai sejati $a$, yang disebut galat adalah 
+\begin{equation}
+\epsilon = a-\hat{a}
+\nonumber
+\end{equation} 
+\\\ \\\ \\Contoh : \\Jika sebuah pensil yang panjangnya 10,4 cm diukur dengan penggaris ternyata hasilnya 10,5 cm, maka galatnya adalah sebesar 
+\\\ \\\ \center{...} \\\
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{Galat}
+Jika $\hat{a}$ adalah nilai hampiran untuk nilai sejati $a$, yang disebut galat adalah 
+\begin{equation}
+\epsilon = a-\hat{a}
+\nonumber
+\end{equation} 
+\\\ \\\ \\Contoh : \\Jika sebuah pensil yang panjangnya 10,4 cm diukur dengan penggaris ternyata hasilnya 10,5 cm, maka galatnya adalah sebesar 
+
+\begin{equation}
+\begin{split}
+\epsilon &= 10,4 cm - 10,5 cm
+\\&= -0,1 cm
+\end{split}
+\nonumber
+\end{equation}
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{Galat Mutlak}
+Digunakan saat tanda galat (positif atau negatifnya) tidak dipertimbangkan
+\begin{equation}
+|\epsilon| = |a-\hat{a}|
+\nonumber
+\end{equation}
+\ \\\ \\\ \\\ \\\ \\Jika informasinya hanya galat atau galat mutlak saja, tidak tergambar seberapa besar kesalahannya terhadap nilai sejatinya. 
+\\Misal, galat 1 cm pada pengukuran pensil dan pada pengukuran jalan tol efeknya berbeda jauh.
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{Galat Relatif}
+Galat Relatif Sejati :
+\\Galat yang didapat dari hasil normalisasi terhadap nilai sejatinya
+\begin{equation}
+\epsilon_R = \dfrac{a-\hat{a}}{a}
+\nonumber
+\end{equation}
+
+Galat Relatif Hampiran :
+\\Galat yang didapat dari hasil normalisasi terhadap nilai hampirannya
+\begin{equation}
+\epsilon_{RA} = \dfrac{a-\hat{a}}{\hat{a}}
+\nonumber
+\end{equation}
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{Galat Relatif}
+Dalam kenyataannya, nilai sejati jarang diketahui, karena itu digunakan iterasi untuk menghampiri nilai sejati. 
+\\\ \\Dalam iterasi, Galat dan Galat Relatif Hampiran dapat juga dihitung dengan cara :
+\begin{equation}
+\epsilon = \hat{a}_{i}-\hat{a}_{i-1}
+\nonumber
+\end{equation}
+\begin{equation}
+\epsilon_{RA} = \dfrac{\hat{a}_{i}-\hat{a}_{i-1}}{\hat{a}_i}
+\nonumber
+\end{equation}
+dan iterasi dihentikan pada saat 
+\begin{equation}
+|\epsilon| \leq |\epsilon_s|
+\nonumber
+\end{equation}
+dimana $\epsilon_s$ adalah toleransi galat yang diberikan
+
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{Deret Taylor dan Deret Maclaurin}
+Deret Taylor\\\ \\
+$f(x) = f(x_0)+ \dfrac{(x-x_0)}{1!}f'(x_0) + \dfrac{(x-x_0)^2}{2!}f''(x_0) + \dfrac{(x-x_0)^3}{3!}f'''(x_0) + \dots $
+\\\ \\\ \\\ \\Deret Maclaurin = Deret Taylor baku, dengan $x_0=0$\\\ \\
+$f(x) = f(0)+ \dfrac{x}{1!}f'(0) + \dfrac{x^2}{2!}f''(0) + \dfrac{x^3}{3!}f'''(0) + \dots $
+
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{Contoh}
+Fungsi $e^x$ dapat dituliskan dalam deret polinom sebagai berikut
+$e^x = 1+x+ \dfrac{x^2}{2!} + \dfrac{x^3}{3!} + \dfrac{x^4}{4!} + \dots $
+\\\ \\darimana? \\\ \\$f(x) = f(0)+ \dfrac{x}{1!}f'(0) + \dfrac{x^2}{2!}f''(0) + \dfrac{x^3}{3!}f'''(0) + \dots $
+\\\ \\$f(x) = e^x \ \ \ \longrightarrow f(0) = e^0 = 1$
+\\$f'(x) = e^x \ \ \longrightarrow f'(0) = e^0 = 1$
+\\$f"(x) = e^x \ \longrightarrow f"(0) = e^0 = 1$
+\\\qquad \qquad \qquad\vdots
+\\$f^{(n)}(x) = e^x \longrightarrow f^{(n)}(0) = e^0 = 1$
+\end{frame}
+
+
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{Contoh}
+Fungsi $e^x$ dapat dituliskan dalam deret polinom sebagai berikut
+$e^x = 1+x+ \dfrac{x^2}{2!} + \dfrac{x^3}{3!} + \dfrac{x^4}{4!} + \dots $
+\\\ \\Jika kita menghitung nilai $e^x$, bisa digunakan deret polinom tersebut hingga suku ke-n. Suku ke-(n+1) dst menjadi error/galat/residu.
+\\\ \\$e^x = 1+x+ \dfrac{x^2}{2!} + \dfrac{x^3}{3!} + \dfrac{x^4}{4!} + \dots + \dfrac{x^n}{n!} + \epsilon$
+\\\ \\dimana $\epsilon = \dfrac{x^{n+1}}{(n+1)!} + \dfrac{x^{n+2}}{(n+2)!} + \dfrac{x^{n+3}}{(n+3)!} + \dots $
+
+\end{frame}
+
+
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{Demo}
+Fungsi $e^x$ dapat dituliskan dalam deret polinom sebagai berikut
+$e^x = 1+x+ \dfrac{x^2}{2!} + \dfrac{x^3}{3!} + \dfrac{x^4}{4!} + \dots $
+\\\ \\Kita akan menghitung nilai $e^x$ menggunakan deret polinomnya sampai suku ke-n
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{Latihan}
+Uraikan $f(x) = cos(x)$ di sekitar $x=0$. \\\ \\Lalu hitung nilai $f(\pi/3)$ hingga galat relatif hampirannya kurang dari 0.5\%
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{Perambatan Galat}
+misal kita memiliki dua bilangan nilai sejati $a$ dan $b$ dan nilai hampirannya masing masing $\hat{a}$ dan $\hat{b}$
+\\\ \\$a= \hat{a} + \epsilon_a$
+\\$b = \hat{b} + \epsilon_b$
+\\\ \\$a+b = \hat{a} + \hat{b} + (\epsilon_a + \epsilon_b)$
+\\\ \\galat dari penjumlahan setara dengan penjumlahan galat masing masing operandnya
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{Perambatan Galat}
+$a= \hat{a} + \epsilon_a$
+\\$b = \hat{b} + \epsilon_b$
+\\\begin{equation}
+\begin{split}
+a*b &= (\hat{a} + \epsilon_a) (\hat{b} + \epsilon_b)
+\\&= \hat{a}\hat{b} + \hat{a}\epsilon_b + \hat{b}\epsilon_a +\epsilon_a\epsilon_b
+\\&= \hat{a}\hat{b} + (\hat{a}\epsilon_b + \hat{b}\epsilon_a +\epsilon_a\epsilon_b)
+\end{split}
+\nonumber
+\end{equation}
+galat relatif dari operasi perkalian setara dengan 
+\begin{equation}
+\begin{split}
+\epsilon_R &= \dfrac{(\hat{a}\epsilon_b + \hat{b}\epsilon_a +\epsilon_a\epsilon_b)}{ab}
+\\&\approx \epsilon_a + \epsilon_b
+\end{split}
+\nonumber
+\end{equation}
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{Perambatan Galat}
+Jika operasi dilakukan terhadap seruntunan komputasi, maka galat operasi awal akan merambat dalam runtun komputasi tersebut. Hal itu akan mengakibatkan terjadinya penumpukan galat yang semakin besar yang membuat hasil perhitungan akhirnya menyimpang.
+\\\ \\Ketidakpastian hasil akibat galat pembulatan yang bertambah besar dapat membuat perhitungan menjadi tidak stabil (\textit{unstable}). Ketidakstabilan ini disebut dengan ketidakstabilan numerik.
+\\\ \\Proses komputasi numerik yang diinginkan adalah yang stabil, yaitu pada saat galat hasil antara (\textit{intermediate}) hanya sedikit pengaruhnya terhadap hasil akhir.
+\\\ \\Ketidakstabilan numerik dapat dihindari dengan memilih metode komputasi yang stabil.
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{Kondisi Buruk/Ill Conditioned}
+Ketidakstabilan numerik tidak sama dengan ketidakstabilan matematik. Ketidakstabilan matematik sering disebut dengan kondisi buruk (\textit{ill conditioned}), yaitu pada saat perubahan data yang sedikit mengakibatkan perubahan jawaban yang sangat drastis.
+\\\ \\Contoh : solusi dari $x^2-4x+3.999$ adalah $x_1 = 2.032$ dan $x_2 = 1.968$
+\\\ \\Jika datanya berubah sedikit menjadi $x^2 - 4x + 4.000$ atau $x^2 - 4x+4.001$, maka solusinya berubah sangat jauh
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{Kondisi Buruk/Ill Conditioned}
+Akar persamaan $f(x) = 0$ berkondisi buruk jika karena perubahan $\epsilon$ yang kecil mengakibatkan perubahan $h$ yang besar pada
+\begin{equation}
+f(x+h) +\epsilon = 0
+\nonumber
+\end{equation} 
+\\\ \\\ \\\ \\\ \\ * Noble, Ben. \textit{A Videotape Course on Elementary Numerical Analysis}. Oberlin College. 1972.
+\end{frame}
+
+\end{document} 
